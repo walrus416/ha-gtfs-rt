@@ -1,0 +1,75 @@
+Pragma: no-cache
+Arr-Disable-Session-Affinity: True
+Cache-Control: no-store, must-revalidate, no-cache
+Date: Sat, 22 Jan 2022 19:09:07 GMT
+X-AspNet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+Content-Length: 1160
+Content-Type: application/json; charset=utf-8
+Expires: Sat, 22 Jan 2022 19:09:08 GMT
+
+{
+  "Trains": [{
+    "Car": "6",
+    "Destination": "Glenmont",
+    "DestinationCode": "B11",
+    "DestinationName": "Glenmont",
+    "Group": "1",
+    "Line": "RD",
+    "LocationCode": "B04",
+    "LocationName": "Rhode Island Ave-Brentwood",
+    "Min": "6"
+  }, {
+    "Car": "6",
+    "Destination": "Shady Gr",
+    "DestinationCode": "A15",
+    "DestinationName": "Shady Grove",
+    "Group": "2",
+    "Line": "RD",
+    "LocationCode": "B04",
+    "LocationName": "Rhode Island Ave-Brentwood",
+    "Min": "12"
+  }, {
+    "Car": "6",
+    "Destination": "Glenmont",
+    "DestinationCode": "B11",
+    "DestinationName": "Glenmont",
+    "Group": "1",
+    "Line": "RD",
+    "LocationCode": "B04",
+    "LocationName": "Rhode Island Ave-Brentwood",
+    "Min": "18"
+  }, {
+    "Car": "6",
+    "Destination": "Shady Gr",
+    "DestinationCode": "A15",
+    "DestinationName": "Shady Grove",
+    "Group": "2",
+    "Line": "RD",
+    "LocationCode": "B04",
+    "LocationName": "Rhode Island Ave-Brentwood",
+    "Min": "24"
+  }, {
+    "Car": "6",
+    "Destination": "Glenmont",
+    "DestinationCode": "B11",
+    "DestinationName": "Glenmont",
+    "Group": "1",
+    "Line": "RD",
+    "LocationCode": "B04",
+    "LocationName": "Rhode Island Ave-Brentwood",
+    "Min": "30"
+  }, {
+    "Car": "-",
+    "Destination": "Shady Gr",
+    "DestinationCode": "A15",
+    "DestinationName": "Shady Grove",
+    "Group": "2",
+    "Line": "RD",
+    "LocationCode": "B04",
+    "LocationName": "Rhode Island Ave-Brentwood",
+    "Min": "34"
+  }]
+}
+Subscribe to our news feed or contact us at api-support@wmata.com
+Developer License Agreement
