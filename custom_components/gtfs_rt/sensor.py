@@ -33,7 +33,6 @@ ICON = 'mdi:bus'
 MIN_TIME_BETWEEN_UPDATES = datetime.timedelta(seconds=60)
 TIME_STR_FORMAT = "%H:%M"
 
-
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Required(CONF_TRIP_UPDATE_URL): cv.string,
     vol.Optional(CONF_API_KEY): cv.string,
@@ -55,7 +54,8 @@ def due_in_minutes(timestamp):
 
 def setup_platform(hass, config, add_devices, discovery_info=None):
     """Get the Dublin public transport sensor."""
-    data = PublicTransportData(config.get(CONF_TRIP_UPDATE_URL), config.get(CONF_VEHICLE_POSITION_URL), config.get(CONF_API_KEY), config.get(CONF_X_API_KEY))
+    data = PublicTransportData(config.get(CONF_TRIP_UPDATE_URL), config.get(CONF_VEHICLE_POSITION_URL),
+                               config.get(CONF_API_KEY), config.get(CONF_X_API_KEY))
     sensors = []
     for departure in config.get(CONF_DEPARTURES):
         sensors.append(PublicTransportSensor(
@@ -157,7 +157,7 @@ class PublicTransportData(object):
         feed = gtfs_realtime_pb2.FeedMessage()
         response = requests.get(self._trip_update_url, headers=self._headers)
         if response.status_code != 200:
-            _LOGGER.error("updating route status got {}:{}".format(response.status_code,response.content))
+            _LOGGER.error("updating route status got {}:{}".format(response.status_code, response.content))
         feed.ParseFromString(response.content)
         departure_times = {}
 

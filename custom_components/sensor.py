@@ -20,7 +20,7 @@ ATTR_CAR = "Car"
 ATTR_DEST = "Destination"
 
 CONF_API_KEY = 'api_key'
-CONF_STATION = 'station'
+CONF_STATION_CODE = 'station_code'
 CONF_LINE = 'line'
 
 DEFAULT_NAME = 'WMATA Trains'
@@ -30,16 +30,24 @@ TIME_STR_FORMAT = "%H:%M"
 
 API_KEY = '8b9a7a21d4cb4a38925d9cc45d0d5e59'
 
+PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
+    vol.Required(CONF_API_KEY): cv.string,
+    vol.Required(CONF_STATION_CODE): cv.string,
+    vol.Optional(CONF_LINE): cv.string
+})
+
+
 _LOGGER = logging.getLogger(__name__)
 
 
-class Train:
-    def __init__(self, car, dest, group, line, location, eta):
+class TrainSensor:
+    def __init__(self, car, dest, group, line, location, location_code, eta):
         self.car = car
         self.dest = dest
         self.group = group
         self.line = line
         self.location = location
+        self.location_code = location_code
         self.eta = eta
 
 
@@ -55,9 +63,9 @@ def train_data_to_objects(train_data):
     """
     train_objs = []  # Initialize an empty list for the objects
     for train in train_data['Trains']:
-        train_object = Train(car=train['Car'], dest=train['Destination'],
-                             group=train['Group'], line=train['Line'],
-                             location=train['LocationName'], eta=train['Min'])
+        train_object = TrainSensor(car=train['Car'], dest=train['Destination'],
+                                   group=train['Group'], line=train['Line'],
+                                   location=train['LocationName'], location_code=train['LocationCode'], eta=train['Min'])
         train_objs.append(train_object)
 
     return train_objs
