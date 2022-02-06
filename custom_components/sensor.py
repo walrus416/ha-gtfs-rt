@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import datetime
 import http.client
 import json
@@ -7,10 +9,9 @@ import urllib.parse
 import voluptuous as vol
 
 from homeassistant.components.sensor import PLATFORM_SCHEMA
-from homeassistant.const import (CONF_NAME, ATTR_LONGITUDE, ATTR_LATITUDE)
-import homeassistant.util.dt as dt_util
-from homeassistant.helpers.entity import Entity
-from homeassistant.util import Throttle
+from homeassistant.core import HomeAssistant
+from homeassistant.helpers.entity_platform import AddEntitiesCallback
+from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
 import homeassistant.helpers.config_validation as cv
 
 ATTR_LOCATION = "Location"
@@ -40,38 +41,16 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
 _LOGGER = logging.getLogger(__name__)
 
 
-class TrainSensor:
-    def __init__(self, car, dest, group, line, location, location_code, eta):
-        self.car = car
-        self.dest = dest
-        self.group = group
-        self.line = line
-        self.location = location
-        self.location_code = location_code
-        self.eta = eta
+def setup_platform(
+        hass: HomeAssistant,
+        config: ConfigType,
+        add_entities: AddEntitiesCallback,
+        discovery_info: DiscoveryInfoType | None = None
+) -> None:
 
+    train_sensors = fetch_train_data()
 
-def setup_platform(hass, config, add_devices, discovery_info=None):
-    data = fetch_train_data()
-    data = train_data_to_objects(data, CONF_STATION_CODE, CONF_LINE)
-
-    train_sensors = []
-    add_devices(train_sensors)
-
-
-def train_data_to_objects(train_data, station_code, line):
-    """
-    Turns the train dictionary into objects
-    """
-    train_objs = []  # Initialize an empty list for the objects
-    for train in train_data['Trains']:
-        if train['LocationCode'] == station_code and train['Line'] == line:
-            train = TrainSensor(car=train['Car'], dest=train['Destination'], group=train['Group'],
-                                line=train['Line'], location=train['LocationName'],
-                                location_code=train['LocationCode'], eta=train['Min'])
-            train_objs.append(train)
-
-    return train_objs
+    add_entities(train_sensors)
 
 
 def fetch_train_data():
