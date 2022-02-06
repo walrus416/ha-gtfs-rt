@@ -1,13 +1,3 @@
-Pragma: no-cache
-Arr-Disable-Session-Affinity: True
-Cache-Control: no-store, must-revalidate, no-cache
-Date: Sat, 22 Jan 2022 19:09:07 GMT
-X-AspNet-Version: 4.0.30319
-X-Powered-By: ASP.NET
-Content-Length: 1160
-Content-Type: application/json; charset=utf-8
-Expires: Sat, 22 Jan 2022 19:09:08 GMT
-
 {
   "Trains": [{
     "Car": "6",
@@ -71,5 +61,3 @@ Expires: Sat, 22 Jan 2022 19:09:08 GMT
     "Min": "34"
   }]
 }
-Subscribe to our news feed or contact us at api-support@wmata.com
-Developer License Agreement
