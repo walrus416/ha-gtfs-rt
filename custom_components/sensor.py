@@ -20,8 +20,8 @@ ATTR_CAR = "Car"
 ATTR_DEST = "Destination"
 
 CONF_API_KEY = 'api_key'
-CONF_STATION_CODE = 'station_code'
-CONF_LINE = 'line'
+CONF_STATION_CODE = 'B04'
+CONF_LINE = 'RD'
 
 DEFAULT_NAME = 'WMATA Trains'
 
@@ -51,23 +51,25 @@ class TrainSensor:
         self.eta = eta
 
 
-def main():
-    """ Business Logic """
-    train_dict = fetch_train_data()
-    train_objects = train_data_to_objects(train_dict)
+def setup_platform(hass, config, add_devices, discovery_info=None):
+    data = fetch_train_data()
+    data = train_data_to_objects(data, CONF_STATION_CODE, CONF_LINE)
+
+    train_sensors = []
+    add_devices(train_sensors)
 
 
-def train_data_to_objects(train_data):
+def train_data_to_objects(train_data, station_code, line):
     """
     Turns the train dictionary into objects
     """
     train_objs = []  # Initialize an empty list for the objects
     for train in train_data['Trains']:
-        train_object = TrainSensor(car=train['Car'], dest=train['Destination'],
-                                   group=train['Group'], line=train['Line'],
-                                   location=train['LocationName'], location_code=train['LocationCode'],
-                                   eta=train['Min'])
-        train_objs.append(train_object)
+        if train['LocationCode'] == station_code and train['Line'] == line:
+            train = TrainSensor(car=train['Car'], dest=train['Destination'], group=train['Group'],
+                                line=train['Line'], location=train['LocationName'],
+                                location_code=train['LocationCode'], eta=train['Min'])
+            train_objs.append(train)
 
     return train_objs
 
@@ -91,7 +93,3 @@ def fetch_train_data():
         print(e)
 
     return train_dict
-
-
-if __name__ == '__main__':
-    main()
