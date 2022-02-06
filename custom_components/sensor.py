@@ -65,7 +65,8 @@ def train_data_to_objects(train_data):
     for train in train_data['Trains']:
         train_object = TrainSensor(car=train['Car'], dest=train['Destination'],
                                    group=train['Group'], line=train['Line'],
-                                   location=train['LocationName'], location_code=train['LocationCode'], eta=train['Min'])
+                                   location=train['LocationName'], location_code=train['LocationCode'],
+                                   eta=train['Min'])
         train_objs.append(train_object)
 
     return train_objs
