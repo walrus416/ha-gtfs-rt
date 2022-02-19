@@ -7,29 +7,29 @@ import logging
 import urllib.parse
 from typing import Any
 
-#import voluptuous as vol
-#import homeassistant.helpers.config_validation as cv
+import voluptuous as vol
+import homeassistant.helpers.config_validation as cv
 
-#from homeassistant.core import HomeAssistant
-#from homeassistant.helpers.entity_platform import AddEntitiesCallback
-#from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
-#from homeassistant.util import Throttle
+from homeassistant.core import HomeAssistant
+from homeassistant.helpers.entity_platform import AddEntitiesCallback
+from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from homeassistant.util import Throttle
 
-#from homeassistant.components.sensor import (SensorDeviceClass, SensorEntity, SensorStateClass,
-                                             #PLATFORM_SCHEMA as SENSOR_PLATFORM_SCHEMA)
+from homeassistant.components.sensor import (SensorDeviceClass, SensorEntity, SensorStateClass,
+                                             PLATFORM_SCHEMA as SENSOR_PLATFORM_SCHEMA)
 
 import logging
 
 _LOGGER = logging.getLogger(__name__)
 
 CONF_APIKEY = 'api_key'
-CONF_TRAINS = 'trains'
-CONF_STOP_CODE = 'stop_code'
-CONF_LINE = 'line'
 CONF_INTERVAL = 'update_interval'
-CONF_GROUP = 'group'
-CONF_SKIP_ARR_BRD = 'skip'
+CONF_TRAINS = 'trains'
 CONF_NAME = 'name'
+CONF_STOP_CODE = 'stop_code'
+CONF_GROUP = 'group'
+CONF_LINE = 'line'
+CONF_TRAIN_NUMBER = 'train_number'
 CONF_OFFSET = 'offset'
 
 ATTR_STOP_CODE = 'Stop Code'
@@ -41,22 +41,21 @@ ATTR_NEXT = 'Next Train'
 ICON = 'mdi:train'
 UPDATE_INTERVAL = datetime.timedelta(seconds=10)
 
-"""
+
 PLATFORM_SCHEMA = SENSOR_PLATFORM_SCHEMA.extend(
     {
         vol.Required(CONF_APIKEY): cv.string,
-        vol.Optional(CONF_NAME, default='WMATA Rail Station Sensor'): cv.string,
-        vol.Optional(CONF_TRAINS): [{
+        vol.Optional(CONF_INTERVAL, default=10): cv.positive_int,
+        vol.Required(CONF_TRAINS): [{
+            vol.Optional(CONF_NAME, default=f'Stop {CONF_STOP_CODE} Metro Sensor'): cv.string,
             vol.Required(CONF_STOP_CODE): cv.string,
-            vol.Optional(CONF_TRAIN_NUMBER, default=1): cv.integer,
-            vol.Optional(CONF_OFFSET) = cv.integer,
-            vol.Required(CONF_GROUP): cv.string,
+            vol.Required(CONF_GROUP): cv.positive_int,
             vol.Optional(CONF_LINE): cv.string,
+            vol.Optional(CONF_TRAIN_NUMBER, default=1): cv.positive_int,
+            vol.Optional(CONF_OFFSET): cv.positive_int,
         }]
-        
     }
 )
-"""
 
 
 class TrainSensor(object):
