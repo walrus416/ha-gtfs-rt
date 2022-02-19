@@ -18,25 +18,22 @@ from homeassistant.util import Throttle
 from homeassistant.components.sensor import (SensorDeviceClass, SensorEntity, SensorStateClass,
                                              PLATFORM_SCHEMA as SENSOR_PLATFORM_SCHEMA)
 
-import logging
-
 _LOGGER = logging.getLogger(__name__)
 
 CONF_APIKEY = 'api_key'
-CONF_INTERVAL = 'update_interval'
 CONF_TRAINS = 'trains'
 CONF_NAME = 'name'
-CONF_STOP_CODE = 'stop_code'
+CONF_STATION_CODE = 'stop_code'
 CONF_GROUP = 'group'
 CONF_LINE = 'line'
 CONF_TRAIN_NUMBER = 'train_number'
 CONF_OFFSET = 'offset'
 
+ATTR_ARRIVING_IN = 'Arriving In'
 ATTR_STOP_CODE = 'Stop Code'
 ATTR_STOP_NAME = 'Stop Name'
 ATTR_LINE = 'Line'
 ATTR_DESTINATION = 'Destination'
-ATTR_NEXT = 'Next Train'
 
 ICON = 'mdi:train'
 UPDATE_INTERVAL = datetime.timedelta(seconds=10)
@@ -45,10 +42,9 @@ UPDATE_INTERVAL = datetime.timedelta(seconds=10)
 PLATFORM_SCHEMA = SENSOR_PLATFORM_SCHEMA.extend(
     {
         vol.Required(CONF_APIKEY): cv.string,
-        vol.Optional(CONF_INTERVAL, default=10): cv.positive_int,
         vol.Required(CONF_TRAINS): [{
-            vol.Optional(CONF_NAME, default=f'Stop {CONF_STOP_CODE} Metro Sensor'): cv.string,
-            vol.Required(CONF_STOP_CODE): cv.string,
+            vol.Optional(CONF_NAME, default=f'Stop {CONF_STATION_CODE} Metro Sensor'): cv.string,
+            vol.Required(CONF_STATION_CODE): cv.string,
             vol.Required(CONF_GROUP): cv.positive_int,
             vol.Optional(CONF_LINE): cv.string,
             vol.Optional(CONF_TRAIN_NUMBER, default=1): cv.positive_int,
@@ -58,12 +54,33 @@ PLATFORM_SCHEMA = SENSOR_PLATFORM_SCHEMA.extend(
 )
 
 
-class TrainSensor(object):
+def setup_platform(hass, config, add_devices, discovery_info=None):
+    station_data = WMATAStationData(
+        api_key=config.get(CONF_APIKEY),
+        station_code=config.get(CONF_STATION_CODE)
+    )
+
+    sensors = []
+
+    for train in config.get(CONF_TRAINS):
+        sensors.append(TrainSensor(
+            name=config.get(CONF_NAME),
+            station_data=station_data,
+            group=config.get(CONF_GROUP),
+            train_number=config.get(CONF_TRAIN_NUMBER),
+            offset=config.get(CONF_OFFSET),
+            line=config.get(CONF_LINE)
+        ))
+
+    add_devices(sensors)
+
+
+class TrainSensor(SensorEntity):
     """ The actual sensor """
-    def __init__(self, name, train_data,  group, train_number=1, offset=None, line=None):
+    def __init__(self, name, station_data,  group, train_number=1, offset=None, line=None):
         """ Initialize the sensor """
 
-        self.data = train_data._trains
+        self.data = station_data._trains
 
         self._name = name
         self._group = group
@@ -71,12 +88,27 @@ class TrainSensor(object):
         self._offset = offset
         self._line = line
 
+        self.update()
+
     def update(self):
         self.data.update()
+        self._get_train_data()
 
     def _get_train_data(self):
         """ Filters train data down according to provided parameters. """
         train_data = self.data
+
+        empty_train_data = {
+            'Car': '-',
+            'Destination': '-',
+            'DestinationCode': '-',
+            'DestinationName': '-',
+            'Group': '-',
+            'Line': '-',
+            'LocationCode': '-',
+            'LocationName': '-',
+            'Min': '-',
+        }
 
         filtered = list(filter(lambda d: d['Group'] == self._group, train_data))
 
@@ -92,13 +124,40 @@ class TrainSensor(object):
         try:
             filtered_final = filtered[self._train_number - 1]
         except IndexError:
-            return None
+            return empty_train_data
 
         return filtered_final
 
     @property
     def name(self):
         return self.name
+
+    @property
+    def state(self):
+        """ Returns the sensor state"""
+        train_data = self._get_train_data()
+        return train_data
+
+    @property
+    def device_state_attributes(self):
+        """ Returns the sensor state attributes"""
+        train_data = self._get_train_data()
+
+        attrs = {
+            ATTR_ARRIVING_IN: train_data['Min'],
+            ATTR_STOP_CODE: train_data['LocationCode'],
+            ATTR_STOP_NAME: train_data['LocationName'],
+            ATTR_DESTINATION: train_data['DestinationName'],
+            ATTR_LINE: train_data['Line'],
+        }
+
+    @property
+    def unit_of_measurement(self):
+        return 'min'
+
+    @property
+    def icon(self):
+        return ICON
 
 
 class WMATAStationData(object):
@@ -118,6 +177,7 @@ class WMATAStationData(object):
     def update(self):
         self._update_trains()
 
+    @Throttle(UPDATE_INTERVAL)
     def _update_trains(self):
         """ Get the train information for the station"""
         try:
