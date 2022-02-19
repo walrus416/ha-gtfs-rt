@@ -203,28 +203,3 @@ class WMATAStationData(object):
 
         else:
             self._trains = station_data['trains']
-
-
-if __name__ == '__main__':
-    station = WMATAStationData(api_key='8b9a7a21d4cb4a38925d9cc45d0d5e59', station_code='B03')
-    station._update_trains()
-
-    train = TrainSensor(name='hello', train_data=station, train_number=1, line='RD', group='1')
-    train = train._get_train_data()
-
-    print(train)
-
-    train = TrainSensor(name='hello', train_data=station, train_number=2, line='RD', group='1')
-    train = train._get_train_data()
-
-    print(train)
-
-    train = TrainSensor(name='hello', train_data=station, train_number=3, line='RD', group='1')
-    train = train._get_train_data()
-
-    print(train)
-
-    train = TrainSensor(name='hello', train_data=station, train_number=4, line='RD', group='1')
-    train = train._get_train_data()
-
-    print(train)
