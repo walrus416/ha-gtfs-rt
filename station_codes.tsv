@@ -1,96 +1,96 @@
-Code	Name	Other Platforms	Lines
-A01	Metro Center	C01,	RD
-A02	Farragut North	,	RD
-A03	Dupont Circle	,	RD
-A04	Woodley Park-Zoo/Adams Morgan	,	RD
-A05	Cleveland Park	,	RD
-A06	Van Ness-UDC	,	RD
-A07	Tenleytown-AU	,	RD
-A08	Friendship Heights	,	RD
-A09	Bethesda	,	RD
-A10	Medical Center	,	RD
-A11	Grosvenor-Strathmore	,	RD
-A12	White Flint	,	RD
-A13	Twinbrook	,	RD
-A14	Rockville	,	RD
-A15	Shady Grove	,	RD
-B01	Gallery Pl-Chinatown	F01,	RD
-B02	Judiciary Square	,	RD
-B03	Union Station	,	RD
-B04	Rhode Island Ave-Brentwood	,	RD
-B05	Brookland-CUA	,	RD
-B06	Fort Totten	E06,	RD
-B07	Takoma	,	RD
-B08	Silver Spring	,	RD
-B09	Forest Glen	,	RD
-B10	Wheaton	,	RD
-B11	Glenmont	,	RD
-B35	NoMa-Gallaudet U	,	RD
-C01	Metro Center	A01,	BL,OR,SV
-C02	McPherson Square	,	BL,OR,SV
-C03	Farragut West	,	BL,OR,SV
-C04	Foggy Bottom-GWU	,	BL,OR,SV
-C05	Rosslyn	,	BL,OR,SV
-C06	Arlington Cemetery	,	BL
-C07	Pentagon	,	BL,YL
-C08	Pentagon City	,	BL,YL
-C09	Crystal City	,	BL,YL
-C10	Ronald Reagan Washington National Airport	,	BL,YL
-C12	Braddock Road	,	BL,YL
-C13	King St-Old Town	,	BL,YL
-C14	Eisenhower Avenue	,	YL
-C15	Huntington	,	YL
-D01	Federal Triangle	,	BL,OR,SV
-D02	Smithsonian	,	BL,OR,SV
-D03	L'Enfant Plaza	F03,	BL,OR,SV
-D04	Federal Center SW	,	BL,OR,SV
-D05	Capitol South	,	BL,OR,SV
-D06	Eastern Market	,	BL,OR,SV
-D07	Potomac Ave	,	BL,OR,SV
-D08	Stadium-Armory	,	BL,OR,SV
-D09	Minnesota Ave	,	OR
-D10	Deanwood	,	OR
-D11	Cheverly	,	OR
-D12	Landover	,	OR
-D13	New Carrollton	,	OR
-E01	Mt Vernon Sq 7th St-Convention Center	,	GR,YL
-E02	Shaw-Howard U	,	GR,YL
-E03	U Street/African-Amer Civil War Memorial/Cardozo	,	GR,YL
-E04	Columbia Heights	,	GR,YL
-E05	Georgia Ave-Petworth	,	GR,YL
-E06	Fort Totten	B06,	GR,YL
-E07	West Hyattsville	,	GR
-E08	Prince George's Plaza	,	GR
-E09	College Park-U of Md	,	GR
-E10	Greenbelt	,	GR
-F01	Gallery Pl-Chinatown	B01,	GR,YL
-F02	Archives-Navy Memorial-Penn Quarter	,	GR,YL
-F03	L'Enfant Plaza	D03,	GR,YL
-F04	Waterfront	,	GR
-F05	Navy Yard-Ballpark	,	GR
-F06	Anacostia	,	GR
-F07	Congress Heights	,	GR
-F08	Southern Avenue	,	GR
-F09	Naylor Road	,	GR
-F10	Suitland	,	GR
-F11	Branch Ave	,	GR
-G01	Benning Road	,	BL,SV
-G02	Capitol Heights	,	BL,SV
-G03	Addison Road-Seat Pleasant	,	BL,SV
-G04	Morgan Boulevard	,	BL,SV
-G05	Largo Town Center	,	BL,SV
-J02	Van Dorn Street	,	BL
-J03	Franconia-Springfield	,	BL
-K01	Court House	,	OR,SV
-K02	Clarendon	,	OR,SV
-K03	Virginia Square-GMU	,	OR,SV
-K04	Ballston-MU	,	OR,SV
-K05	East Falls Church	,	OR,SV
-K06	West Falls Church-VT/UVA	,	OR
-K07	Dunn Loring-Merrifield	,	OR
-K08	Vienna/Fairfax-GMU	,	OR
-N01	McLean	,	SV
-N02	Tysons Corner	,	SV
-N03	Greensboro	,	SV
-N04	Spring Hill	,	SV
-N06	Wiehle-Reston East	,	SV
+Code	Name	Other Platforms	Lines	Address
+A01	Metro Center	C01,	RD	607 13th St. NW Washington, DC 20005
+A02	Farragut North	,	RD	1001 Connecticut Avenue NW Washington, DC 20036
+A03	Dupont Circle	,	RD	1525 20th St. NW Washington, DC 20036
+A04	Woodley Park-Zoo/Adams Morgan	,	RD	2700 Connecticut Ave., NW Washington, DC 20008
+A05	Cleveland Park	,	RD	3599 Connecticut Avenue NW Washington, DC 20008
+A06	Van Ness-UDC	,	RD	4200 Connecticut Avenue NW Washington, DC 20008
+A07	Tenleytown-AU	,	RD	4501 Wisconsin Avenue NW Washington, DC 20016
+A08	Friendship Heights	,	RD	5337 Wisconsin Avenue NW Washington, DC 20015
+A09	Bethesda	,	RD	7450 Wisconsin Avenue Bethesda, MD 20814
+A10	Medical Center	,	RD	8810 Rockville Pike Bethesda, MD 20814
+A11	Grosvenor-Strathmore	,	RD	10300 Rockville Pike Bethesda, MD 20852
+A12	White Flint	,	RD	5500 Marinelli Road Rockville, MD 20852
+A13	Twinbrook	,	RD	1600 Chapman Avenue Rockville, MD 20852
+A14	Rockville	,	RD	251 Hungerford Drive Rockville, MD 20850
+A15	Shady Grove	,	RD	15903 Somerville Drive Rockville, MD 20855
+B01	Gallery Pl-Chinatown	F01,	RD	630 H St. NW Washington, DC 20001
+B02	Judiciary Square	,	RD	450 F Street NW Washington, DC 20001
+B03	Union Station	,	RD	701 First St. NE Washington, DC 20002
+B04	Rhode Island Ave-Brentwood	,	RD	919 Rhode Island Avenue NE Washington, DC 20018
+B05	Brookland-CUA	,	RD	801 Michigan Avenue NE Washington, DC 20017
+B06	Fort Totten	E06,	RD	550 Galloway Street NE Washington, DC 20011
+B07	Takoma	,	RD	327 Cedar Street NW Washington, DC 20012
+B08	Silver Spring	,	RD	8400 Colesville Road Silver Spring, MD 20910
+B09	Forest Glen	,	RD	9730 Georgia Avenue Forest Glen, MD 20910
+B10	Wheaton	,	RD	11171 Georgia Avenue Silver Spring, MD 20902
+B11	Glenmont	,	RD	12501 Georgia Avenue Silver Spring, MD 20906
+B35	NoMa-Gallaudet U	,	RD	200 Florida Ave N.E. Washington, DC 20002
+C01	Metro Center	A01,	BL,OR,SV	607 13th St. NW Washington, DC 20005
+C02	McPherson Square	,	BL,OR,SV	1400 I St. NW Washington, DC 20005
+C03	Farragut West	,	BL,OR,SV	900 18th St. NW Washington, DC 20006
+C04	Foggy Bottom-GWU	,	BL,OR,SV	2301 I St. NW Washington, DC 20037
+C05	Rosslyn	,	BL,OR,SV	1850 N. Moore Street Arlington, VA 22209
+C06	Arlington Cemetery	,	BL	1000 North Memorial Drive Arlington, VA 22211
+C07	Pentagon	,	BL,YL	2 South Rotary Road Arlington, VA 22202
+C08	Pentagon City	,	BL,YL	1250 South Hayes St. Arlington, VA 22202
+C09	Crystal City	,	BL,YL	1750 South Clark St. Arlington, VA 22202
+C10	Ronald Reagan Washington National Airport	,	BL,YL	2400 S. Smith Blvd. Arlington, VA 22202
+C12	Braddock Road	,	BL,YL	700 N. West St. Alexandria, VA 22301
+C13	King St-Old Town	,	BL,YL	1900 King Street Alexandria, VA 22301
+C14	Eisenhower Avenue	,	YL	2400 Eisenhower Avenue Alexandria, VA 22314
+C15	Huntington	,	YL	2501 Huntington Ave Huntington, VA 22303
+D01	Federal Triangle	,	BL,OR,SV	302 12th St. NW Washington, DC 20004
+D02	Smithsonian	,	BL,OR,SV	1200 Independence Avenue SW Washington, DC 20004
+D03	L'Enfant Plaza	F03,	BL,OR,SV	600 Maryland Avenue SW Washington, DC 20024
+D04	Federal Center SW	,	BL,OR,SV	401 3rd Street SW Washington, DC 20024
+D05	Capitol South	,	BL,OR,SV	355 First Street SE Washington, DC 20003
+D06	Eastern Market	,	BL,OR,SV	701 Pennsylvania Avenue SE Washington, DC 20003
+D07	Potomac Ave	,	BL,OR,SV	700 14th Street SE Washington, DC 20003
+D08	Stadium-Armory	,	BL,OR,SV	192 19th St. SE Washington, DC 20003
+D09	Minnesota Ave	,	OR	4000 Minnesota Avenue NE Washington, DC 20019
+D10	Deanwood	,	OR	4720 Minnesota Avenue NE Washington, DC 20019
+D11	Cheverly	,	OR	5501 Columbia Park Cheverly, MD 20785
+D12	Landover	,	OR	3000 Pennsy Drive Hyattsville, MD 20785
+D13	New Carrollton	,	OR	4700 Garden City Drive New Carrollton, MD 20784
+E01	Mt Vernon Sq 7th St-Convention Center	,	GR,YL	700 M St. NW Washington, DC 20001
+E02	Shaw-Howard U	,	GR,YL	1701 8th St. NW Washington, DC 20001
+E03	U Street/African-Amer Civil War Memorial/Cardozo	,	GR,YL	1240 U Street NW Washington, DC 20009
+E04	Columbia Heights	,	GR,YL	3030 14th St. NW Washington, DC 20009
+E05	Georgia Ave-Petworth	,	GR,YL	3700 Georgia Avenue NW Washington, DC 20010
+E06	Fort Totten	B06,	GR,YL	550 Galloway Street NE Washington, DC 20011
+E07	West Hyattsville	,	GR	2700 Hamilton St. Hyattsville, MD 20782
+E08	Prince George's Plaza	,	GR	3575 East West Highway Hyattsville, MD 20782
+E09	College Park-U of Md	,	GR	4931 Calvert Road College Park, MD 20740
+E10	Greenbelt	,	GR	5717 Greenbelt Metro Drive Greenbelt, MD 20740
+F01	Gallery Pl-Chinatown	B01,	GR,YL	630 H St. NW Washington, DC 20001
+F02	Archives-Navy Memorial-Penn Quarter	,	GR,YL	701 Pennsylvania Avenue NW Washington, DC 20004
+F03	L'Enfant Plaza	D03,	GR,YL	600 Maryland Avenue SW Washington, DC 20024
+F04	Waterfront	,	GR	399 M Street SW Washington, DC 20024
+F05	Navy Yard-Ballpark	,	GR	200 M Street SE Washington, DC 20003
+F06	Anacostia	,	GR	1101 Howard Road SE Washington, DC 20020
+F07	Congress Heights	,	GR	1290 Alabama Avenue SE Washington, DC 20020
+F08	Southern Avenue	,	GR	1411 Southern Avenue Temple Hills, MD 20748
+F09	Naylor Road	,	GR	3101 Branch Avenue Temple Hills, MD 20748
+F10	Suitland	,	GR	4500 Silver Hill Road Suitland, MD 20746
+F11	Branch Ave	,	GR	4704 Old Soper Road Suitland, MD 20746
+G01	Benning Road	,	BL,SV	4500 Benning Road Washington, DC 20019
+G02	Capitol Heights	,	BL,SV	133 Central Avenue Capitol Heights, MD 20743
+G03	Addison Road-Seat Pleasant	,	BL,SV	100 Addison Road S. Capitol Heights, MD 20743
+G04	Morgan Boulevard	,	BL,SV	300 Garrett Morgan Blvd. Landover, MD 20785
+G05	Largo Town Center	,	BL,SV	Largo Town Center 9000 Lottsford Road Largo, MD 20774
+J02	Van Dorn Street	,	BL	5690 Eisenhower Avenue Alexandria, VA 22310
+J03	Franconia-Springfield	,	BL	6880 Frontier Drive Springfield, VA 22150
+K01	Court House	,	OR,SV	2100 Wilson Blvd Arlington, VA 22201
+K02	Clarendon	,	OR,SV	3100 Wilson Blvd Arlington, VA 22201
+K03	Virginia Square-GMU	,	OR,SV	3600 Fairfax Drive Arlington, VA 22201
+K04	Ballston-MU	,	OR,SV	4230 Fairfax Drive Arlington, VA 22201
+K05	East Falls Church	,	OR,SV	2001 N. Sycamore St. Arlington, VA 22205
+K06	West Falls Church-VT/UVA	,	OR	7040 Haycock Road Falls Church, VA 22043
+K07	Dunn Loring-Merrifield	,	OR	2700 Gallows Road Vienna, VA 22180
+K08	Vienna/Fairfax-GMU	,	OR	9550 Saintsbury Drive Fairfax, VA 22031
+N01	McLean	,	SV	1824 Dolley Madison Boulevard McLean, VA 22102
+N02	Tysons Corner	,	SV	1943 Chain Bridge Road McLean, VA 22102
+N03	Greensboro	,	SV	8305 Leesburg Pike Vienna, VA 22182
+N04	Spring Hill	,	SV	1576 Spring Hill Road Vienna, VA 22182
+N06	Wiehle-Reston East	,	SV	1862 Wiehle Avenue Reston, VA 20190
