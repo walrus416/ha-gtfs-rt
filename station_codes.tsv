@@ -1,0 +1,96 @@
+Code	Name	Other Platforms	Lines
+A01	Metro Center	C01,	RD
+A02	Farragut North	,	RD
+A03	Dupont Circle	,	RD
+A04	Woodley Park-Zoo/Adams Morgan	,	RD
+A05	Cleveland Park	,	RD
+A06	Van Ness-UDC	,	RD
+A07	Tenleytown-AU	,	RD
+A08	Friendship Heights	,	RD
+A09	Bethesda	,	RD
+A10	Medical Center	,	RD
+A11	Grosvenor-Strathmore	,	RD
+A12	White Flint	,	RD
+A13	Twinbrook	,	RD
+A14	Rockville	,	RD
+A15	Shady Grove	,	RD
+B01	Gallery Pl-Chinatown	F01,	RD
+B02	Judiciary Square	,	RD
+B03	Union Station	,	RD
+B04	Rhode Island Ave-Brentwood	,	RD
+B05	Brookland-CUA	,	RD
+B06	Fort Totten	E06,	RD
+B07	Takoma	,	RD
+B08	Silver Spring	,	RD
+B09	Forest Glen	,	RD
+B10	Wheaton	,	RD
+B11	Glenmont	,	RD
+B35	NoMa-Gallaudet U	,	RD
+C01	Metro Center	A01,	BL,OR,SV
+C02	McPherson Square	,	BL,OR,SV
+C03	Farragut West	,	BL,OR,SV
+C04	Foggy Bottom-GWU	,	BL,OR,SV
+C05	Rosslyn	,	BL,OR,SV
+C06	Arlington Cemetery	,	BL
+C07	Pentagon	,	BL,YL
+C08	Pentagon City	,	BL,YL
+C09	Crystal City	,	BL,YL
+C10	Ronald Reagan Washington National Airport	,	BL,YL
+C12	Braddock Road	,	BL,YL
+C13	King St-Old Town	,	BL,YL
+C14	Eisenhower Avenue	,	YL
+C15	Huntington	,	YL
+D01	Federal Triangle	,	BL,OR,SV
+D02	Smithsonian	,	BL,OR,SV
+D03	L'Enfant Plaza	F03,	BL,OR,SV
+D04	Federal Center SW	,	BL,OR,SV
+D05	Capitol South	,	BL,OR,SV
+D06	Eastern Market	,	BL,OR,SV
+D07	Potomac Ave	,	BL,OR,SV
+D08	Stadium-Armory	,	BL,OR,SV
+D09	Minnesota Ave	,	OR
+D10	Deanwood	,	OR
+D11	Cheverly	,	OR
+D12	Landover	,	OR
+D13	New Carrollton	,	OR
+E01	Mt Vernon Sq 7th St-Convention Center	,	GR,YL
+E02	Shaw-Howard U	,	GR,YL
+E03	U Street/African-Amer Civil War Memorial/Cardozo	,	GR,YL
+E04	Columbia Heights	,	GR,YL
+E05	Georgia Ave-Petworth	,	GR,YL
+E06	Fort Totten	B06,	GR,YL
+E07	West Hyattsville	,	GR
+E08	Prince George's Plaza	,	GR
+E09	College Park-U of Md	,	GR
+E10	Greenbelt	,	GR
+F01	Gallery Pl-Chinatown	B01,	GR,YL
+F02	Archives-Navy Memorial-Penn Quarter	,	GR,YL
+F03	L'Enfant Plaza	D03,	GR,YL
+F04	Waterfront	,	GR
+F05	Navy Yard-Ballpark	,	GR
+F06	Anacostia	,	GR
+F07	Congress Heights	,	GR
+F08	Southern Avenue	,	GR
+F09	Naylor Road	,	GR
+F10	Suitland	,	GR
+F11	Branch Ave	,	GR
+G01	Benning Road	,	BL,SV
+G02	Capitol Heights	,	BL,SV
+G03	Addison Road-Seat Pleasant	,	BL,SV
+G04	Morgan Boulevard	,	BL,SV
+G05	Largo Town Center	,	BL,SV
+J02	Van Dorn Street	,	BL
+J03	Franconia-Springfield	,	BL
+K01	Court House	,	OR,SV
+K02	Clarendon	,	OR,SV
+K03	Virginia Square-GMU	,	OR,SV
+K04	Ballston-MU	,	OR,SV
+K05	East Falls Church	,	OR,SV
+K06	West Falls Church-VT/UVA	,	OR
+K07	Dunn Loring-Merrifield	,	OR
+K08	Vienna/Fairfax-GMU	,	OR
+N01	McLean	,	SV
+N02	Tysons Corner	,	SV
+N03	Greensboro	,	SV
+N04	Spring Hill	,	SV
+N06	Wiehle-Reston East	,	SV
